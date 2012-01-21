@@ -7,11 +7,11 @@ class SystemNotificationMailer < Mailer
     content_type "multipart/alternative"
 
     part "text/plain" do |p|
-      p.body = render_message("system_notification.erb", :body => system_notification.body)
+      p.body = render_message("vendor/plugins/system_notification_plugin/app/views/system_notification_mailer/system_notification.erb", :body => system_notification.body)
     end
     
     part "text/html" do |p|
-      p.body = render_message("system_notification.text.html.erb", :body => system_notification.body)
+      p.body = render_message("vendor/plugins/system_notification_plugin/app/views/system_notification_mailer/system_notification.text.html.erb", :body => system_notification.body)
     end
 
   end
